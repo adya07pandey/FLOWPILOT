@@ -34,7 +34,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
-// auth
+
+app.get("/", (req, res) => {
+  res.send("FlowPilot backend is running 🚀");
+});
+
+
 app.use("/auth", authRoutes);
 app.use("/organizations",orgroutes);
 app.use("/workflow", workflowroutes);
