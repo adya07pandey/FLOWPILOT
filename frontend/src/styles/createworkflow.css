@@ -1,0 +1,473 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+.navbar {
+  border-bottom: 0.1px solid #f4fefe4d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  z-index: 1000;
+  /* background: aqua; */
+  /* border: 0.1px solid #f4fefe24; */
+}
+.left-nav,
+.right-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.logo img {
+  position: relative;
+  top: 4px;
+  margin-left: 15%;
+  width: 130px;
+  height: 80px;
+  object-fit: contain;
+}
+.back-square,
+.back-square:hover,
+.back-square:active,
+.back-square:focus,
+.back-square:focus-visible {
+  /* background: #000; */
+  background-color: transparent;
+  border: 0.1px solid #f4fefe4d;
+  display: flex;
+  padding: 8px 8px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-flow {
+  z-index: 1 !important;
+}
+
+.inviteuser {
+  z-index: 9999;
+}
+
+.leftsidebar {
+  height: calc(100vh-60px);
+  border: 0.1px solid #f4fefe4d;
+  border-radius: 8px;
+  padding: 10px;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  overflow: hidden;
+  justify-content: space-between;
+}
+.rightside {
+  height: 100%;
+    margin-right: 0px;
+  border: 0.1px solid #f4fefe4d;
+  border-radius: 8px;
+  padding: 16px;
+  overflow: hidden;
+  background-color: #0a0e14;
+}
+.workflowname {
+  margin-bottom: 15px;
+  font-size: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+.add-node {
+  margin-bottom: 10px;
+  background: #f4fefe;
+  color: #182b31;
+  border: 0px;
+  width: 100%;
+  font-weight: bolder;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 10px;
+}
+.save {
+  margin: 10px;
+  background: #f4fefe;
+  color: #182b31;
+  border: 0px;
+  height: 35px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bolder;
+}
+.status svg {
+  font-size: 13px;
+}
+.status svg {
+  transition: transform 0.2s ease;
+}
+
+.status:active svg {
+  transform: rotate(180deg);
+}
+
+.status,
+.status:hover,
+.status:active,
+.status:focus,
+.status:focus-visible {
+  margin: 10px;
+  gap: 7px;
+  background: transparent;
+  color: #f4fefe;
+  border: 0.1px solid #f4fefe4d;
+  height: 35px;
+  width: 100px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bolder;
+}
+.task-node {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #182b31;
+  border: 0.1px solid #f4fefe4d;
+  color: #f4fefe;
+  padding: 10px;
+}
+
+.approval-node {
+  border-radius: 8px;
+  padding: 10px;
+  width: 180px;
+  flex-direction: column;
+  background-color: #182b31;
+  border: 0.1px solid #f4fefe4d;
+  color: #f4fefe;
+  padding: 5px;
+}
+
+.task-node input,
+.approval-node input,
+.task-node input:hover,
+.approval-node input:hover,
+.task-node input:active,
+.approval-node input:active,
+.task-node input:focus,
+.approval-node input:focus,
+.task-node input:focus-visible,
+.approval-node input:focus-visible {
+  background: transparent;
+  border: none;
+}
+.main1 {
+  display: grid;
+  grid-template-columns: 220px 1fr 300px;
+  height: calc(100vh - 50px); /* navbar height */
+  padding: 8px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 50px);
+
+  gap: 10PX;
+
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* node config panel  */
+
+.rightpanel {
+  padding: 20px;
+  background: transparent;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  border: 1px solid #f4fefe4d;
+  margin-right: 15px;
+  border-radius: 8px;
+  align-items: center;
+  /* justify-content: center; */
+  overflow: hidden;
+}
+
+.workflow-name input{
+  background-color: transparent;
+  /* border: 1px solid #f4fefe4d; */
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+
+.nodes-info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 8px;
+}
+
+.nodes-info input,.nodes-info select{
+  background-color: transparent;
+  border: 0.1px solid #f4fefe4d;
+  width: 230px;
+  padding: 10px;
+  margin-top: 0px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.nodes-info select{
+  background-color: transparent;
+  border: 0.1px solid #f4fefe4d;
+  width: 251px;
+  padding: 10px;
+  margin-top: 0px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.nodes-info select option {
+  background: #0a0e14;
+  color: #f4fefe;
+  padding: 10px 0px;
+}
+
+.nodes-info label{
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 200;
+  color: #f4fefec1;
+}
+
+/* nodes */
+
+.task-node {
+  background: #182b31;
+  border: 2px solid #f4fefe4d;
+  border-radius: 8px;
+  padding: 10px;
+  color: #f4fefe;
+
+  width: auto;
+  min-width: 160px;
+  max-width: 320px;
+
+  display: inline-block;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.task-done{
+  border-color: #32ab5e;
+  background: #298e4ea7;
+}
+
+.task-inprogress{
+  border-color: #e3e354bb;
+  background: #cbce0eab;
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 6px 0;
+  line-height: 1.4;
+color: #f4fefe;
+  /* allow wrapping */
+  white-space: normal;
+  word-break: break-word;
+}
+
+.task-assignee {
+  font-size: 12px;
+  color: #f4fefedd;
+}
+
+.task-node input {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+}
+
+/* Placeholder text */
+.task-node input::placeholder {
+  /* color: #94a3b8;     */
+  font-weight: 400;
+  opacity: 1;            /* Firefox fix */
+}
+.task-node input:focus::placeholder {
+  opacity: 0.4;
+}
+.approval-node {
+  background: #1a2f1f;
+  border: 2px solid #22c55e66;
+  border-radius: 8px;
+  padding: 10px;
+  color: #f4fefe;
+
+  width: auto;
+  min-width: 160px;
+  max-width: 320px;
+
+  display: inline-block;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.approval-node input {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  color: #f4fefe;
+}
+
+.approval-node input::placeholder {
+  color: #f4fefe95;
+  opacity: 1;
+}
+
+.approval-node input:focus::placeholder {
+  opacity: 0.4;
+}
+
+
+.approval-approver {
+  font-size: 12px;
+  color: #bbf7d0;
+}
+.approval-node {
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 160px;
+  max-width: 320px;
+  border: 2px solid #182b31;
+  background: #64748b;
+  color: #f4fefe;
+}
+
+
+
+
+.approval-status {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.approval-node {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px 0;
+color: #f4fefe;
+  /* allow wrapping */
+  white-space: normal;
+  word-break: break-word;
+border: 2px solid #2d3239;
+}
+
+.approval-approver {
+  font-size: 12px;
+  color: #f4fefedd;
+}
+
+
+.deletenodebtn{
+  padding: 10px;
+  background-color: #f4fefe;
+  color: #0a0e14;
+  font-weight: bolder;
+  font-size: 15px;
+  margin-top: 15px;
+  width: calc(100% + 4%);
+  border-radius: 4px;
+}
+
+.approval-approved {
+  border-color: #32ab5e;
+  background: #298e4ea7;
+}
+
+.approval-rejected {
+  border-color: #ef4444;
+  background: #cb3c3cc4;
+}
+
+.save-banner {
+  position: fixed;
+  top: 64px;
+  right: 20px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.save-banner.error {
+  background: rgba(248, 113, 113, 0.15);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  color: #F87171;
+}
+
+.save-banner.success {
+  background: rgba(125, 226, 183, 0.15);
+  border: 1px solid rgba(125, 226, 183, 0.4);
+  color: #7DE2B7;
+}
+.field-warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 6px 10px;
+
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  border-radius: 6px;
+
+  font-size: 12px;
+  color: #FCA5A5;
+
+  backdrop-filter: blur(6px);
+}
+
+.warning-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.warning-text {
+  line-height: 1.3;
+}

@@ -1,0 +1,187 @@
+body{
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+      display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  
+}
+
+.nav {
+    box-sizing: border-box;
+    position: fixed; 
+    border: none;
+    inset: 0;
+    width: 100%;
+    height: 9%;
+    padding: 0 2%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    z-index: 1000;
+    /* background: #000; */
+    /* border: 0.1px solid #f4fefe24; */
+
+}
+.logo img{
+    width: 130px;
+    height: 8%;
+    object-fit: contain;   
+}
+
+.loginbox{
+    display: flex;
+}
+
+.signup{ 
+    background: #f4fefe;
+    color: #182b31;
+    border: 0px;
+    margin-right: 10px;
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bolder;
+
+}
+.login{
+    background: transparent;
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.login,.login:hover,.login:focus,.login:focus-visible,.login:active{
+    border: none;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.main-home{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.h1{
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    /* font-family: sans-serif; */
+    font-weight: bolder;
+    margin: -5px;
+    font-size: 3rem;
+    /* background-color: bisque; */
+}
+.h2{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 0 1%;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .signup,
+  .login {
+    font-size: 0.9em;
+  }
+
+  .main-home {
+    padding-top: 70px;
+    text-align: center;
+    
+  }
+  .h1{
+    text-align: center;
+    font-size: 2.7rem;
+  }
+   .h2{
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .main-home {
+  min-height: 100vh;
+  padding: 120px 20px 40px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 6vw, 52px);
+  line-height: 1.1;
+  margin: 6px 0;
+  color: #f4fefe;
+}
+
+.h2 {
+  margin-top: 16px;
+  font-size: clamp(14px, 3.8vw, 20px);
+  line-height: 1.6;
+  color: #B4C3CC;
+  max-width: 90%;
+}
+
+.h1:first-child {
+  background: linear-gradient(
+    90deg,
+    #f4fefe,
+    #b4c3cc
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+  
+}
+@media (max-width: 360px) {
+  .main-home {
+    padding-top: 100px;
+  }
+
+  .h1 {
+    font-size: 24px;
+  }
+
+  .h2 {
+    font-size: 13px;
+  }
+}

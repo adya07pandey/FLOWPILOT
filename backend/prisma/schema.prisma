@@ -1,0 +1,167 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id        String   @id @default(uuid())
+  name      String
+  plan      String   @default("FREE")
+  createdAt DateTime @default(now())
+
+  memberships Membership[]
+  workflows   Workflow[]
+  tasks       Task[]
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+
+  memberships Membership[]
+  tasks       Task[]       @relation("AssignedTasks")
+  workflows   Workflow[]   @relation("WorkflowCreator")
+}
+
+model Membership {
+  id             String   @id @default(uuid())
+  userId         String
+  organizationId String
+  role           Role
+  joinedAt       DateTime @default(now())
+
+  user         User         @relation(fields: [userId], references: [id])
+  organization Organization @relation(fields: [organizationId], references: [id])
+
+  @@unique([userId, organizationId])
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  EMPLOYEE
+}
+
+model Workflow {
+  id             String   @id @default(uuid())
+  organizationId String
+  name           String
+  status         String
+  createdBy      String
+  createdAt      DateTime @default(now())
+
+  creator      User         @relation("WorkflowCreator", fields: [createdBy], references: [id])
+  organization Organization @relation(fields: [organizationId], references: [id])
+
+  nodes WorkflowNode[]
+  edges WorkflowEdge[]
+  tasks Task[]         @relation("WorkflowOfTask")
+  logs WorkflowLog[]
+}
+
+model WorkflowNode {
+  id         String @id @default(uuid())
+  workflowId String
+  type       String
+  config     Json
+  position   Json
+
+  workflow Workflow @relation(fields: [workflowId], references: [id])
+}
+
+model WorkflowEdge {
+  id         String @id @default(uuid())
+  workflowId String
+  fromNodeId String
+  toNodeId   String
+  condition  Json?
+
+  workflow Workflow @relation(fields: [workflowId], references: [id])
+}
+
+model Task {
+  id             String     @id @default(uuid())
+  organizationId String
+  workflowId     String
+  nodeId         String
+  title          String?
+  assignedTo     String?
+  status         TaskStatus
+  dueDate        DateTime?
+  createdAt      DateTime   @default(now())
+  completedOn    DateTime?
+
+  workflow     Workflow     @relation("WorkflowOfTask", fields: [workflowId], references: [id])
+  organization Organization @relation(fields: [organizationId], references: [id])
+  assignee     User?        @relation("AssignedTasks", fields: [assignedTo], references: [id])
+  logs         TaskLog[]
+  approvals    Approval[]
+}
+
+
+model Approval {
+  id         String    @id @default(uuid())
+  taskId     String    @unique
+  approverId String
+  status     ApprovalStatus
+  decidedAt  DateTime?
+
+  task Task @relation(fields: [taskId], references: [id])
+}
+
+
+model TaskLog {
+  id          String   @id @default(uuid())
+  taskId      String
+  action      TaskLogAction
+  performedBy String?
+  createdAt   DateTime @default(now())
+
+  task Task @relation(fields: [taskId], references: [id])
+}
+
+model WorkflowLog {
+  id          String   @id @default(uuid())
+  workflowId  String
+  action      WorkflowLogAction
+  performedBy String?
+  createdAt   DateTime @default(now())
+
+  workflow Workflow @relation(fields: [workflowId], references: [id])
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  BLOCKED
+  DONE
+}
+enum ApprovalStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+enum TaskLogAction {
+  TASK_CREATED
+  TASK_ASSIGNED
+  TASK_COMPLETED
+  TASK_APPROVED
+  TASK_REJECTED
+}
+
+enum WorkflowLogAction {
+  WORKFLOW_CREATED
+  WORKFLOW_STARTED
+  TASK_CREATED
+  TASK_APPROVED
+  WORKFLOW_COMPLETED
+  WORKFLOW_HALTED
+}

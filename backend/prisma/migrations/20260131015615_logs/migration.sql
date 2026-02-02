@@ -1,0 +1,22 @@
+-- CreateEnum
+CREATE TYPE "TaskLogAction" AS ENUM ('TASK_CREATED', 'TASK_ASSIGNED', 'TASK_APPROVED', 'TASK_REJECTED', 'TASK_COMPLETED');
+
+-- CreateEnum
+CREATE TYPE "WorkflowLogAction" AS ENUM ('WORKFLOW_CREATED', 'WORKFLOW_STARTED', 'TASK_CREATED', 'TASK_APPROVED', 'WORKFLOW_COMPLETED', 'WORKFLOW_HALTED');
+
+-- AlterTable
+ALTER TABLE "TaskLog" ALTER COLUMN "performedBy" DROP NOT NULL;
+
+-- CreateTable
+CREATE TABLE "WorkflowLog" (
+    "id" TEXT NOT NULL,
+    "workflowId" TEXT NOT NULL,
+    "action" TEXT NOT NULL,
+    "performedBy" TEXT,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "WorkflowLog_pkey" PRIMARY KEY ("id")
+);
+
+-- AddForeignKey
+ALTER TABLE "WorkflowLog" ADD CONSTRAINT "WorkflowLog_workflowId_fkey" FOREIGN KEY ("workflowId") REFERENCES "Workflow"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

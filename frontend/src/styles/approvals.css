@@ -1,0 +1,97 @@
+.approval-card{
+    border: 1px solid #f4fefe4d;
+    width:93%;
+    height: auto;
+    padding: 10px;
+    border-radius: 8px;
+    /* background:linear-gradient(#182b31 20%, #0a0e14 100%); */
+    background: linear-gradient(135deg,   #182b31 5%,#0a0e14 70%);
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); */
+    box-shadow:  0 2px 6px rgba(0, 0, 0, 0.35),  0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 20px;
+}
+.card-divider{
+    border: none;
+  height: 1px;
+  background-color: #f4fefe4d;
+  margin: 8px 0 4px;
+}
+.approvals-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.approvals-header,
+.approval-row {
+  display: grid;
+  grid-template-columns: 2.0fr 1.5fr 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+}
+
+.approvals-header {
+  margin-bottom: 5px;
+  height: 35px;
+  grid-template-columns: 1.4fr 1.fr 0.9fr auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f4fefe;
+ background: linear-gradient(
+    135deg,
+    rgba(30, 58, 70, 0.65),
+    rgba(24, 40, 49, 0.75)
+  );
+  border-radius: 6px;
+}
+.doneapprovals-header {
+  display: grid;
+  grid-template-columns: 1.7fr 1.4fr 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 5px;
+  height: 35px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f4fefe;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 70, 0.65),
+    rgba(24, 40, 49, 0.75)
+  );
+  border-radius: 6px;
+}
+
+.approval-row {
+  background: transparent;
+  border-radius: 6px;
+  border-bottom: 0.5px solid #4b5563;
+  border-left: 0.5px solid #4b5563;
+}
+
+.approval-row:hover {
+  background: #182b3163;
+}
+
+.approval-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+.col-action{
+  display: flex;
+}
+.approve-btn,.reject-btn{
+  margin-right: 20px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 4px;
+}
+.approve-btn{
+  background-color: rgb(4, 172, 4);
+}
+.reject-btn{
+  background-color: red;
+}

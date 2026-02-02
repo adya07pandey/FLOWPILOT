@@ -1,0 +1,131 @@
+html,
+body,
+#root {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+body {
+  background-image: url(/home.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.login-container,.signup-container {
+  color: #002329;
+  flex-shrink: 0;
+  width: min(400px, 80vw);
+  max-width: 400px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  /* box-shadow: 0 0 8px #04535f */
+  border: 0.1px solid #f4fefe;
+  padding: 20px;
+  color: #f4fefe;
+}
+
+
+h1 {
+  margin: 20px;
+  font-size: clamp(1.3rem, 4vw, 1.6rem);
+}
+
+.input-field {
+  border: 2px solid #f4fefe;
+  border-radius: 30px;
+  width: 70%;
+  
+  padding: 10px 18px;
+  font-size: 16px;
+  margin: 12px 0;
+  background-color: transparent;
+  color: #f4fefe;
+}
+
+.input-field:focus {
+  /* background-color:#5570702c ; */
+  /* border-color: #002329; */
+  outline: none;
+  box-shadow: none;
+}
+
+.login-btn {
+  margin-top: 16px ;
+  background-color: #f4fefe;
+  border-radius: 25px;
+  padding: 10px;
+  width: 80%;
+  font-size: 18px;
+  color:#1e3a46;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.login-btn:hover {
+  background-color: #f4fefe;
+  transform: translateY(-1px);
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+p {
+  font-size: clamp(0.85rem, 3vw, 0.95rem);
+  letter-spacing: 0.5px;
+}
+
+.signup-change {
+  background: transparent;
+  color: #f4fefe;
+  border: none;
+  cursor: pointer;
+  
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.signup-change:hover {
+  text-decoration: underline;
+  color: #f4fefe;
+}
+
+.signup-change:focus {
+  outline: none;
+}
+@media (max-width: 480px) {
+  root {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-container,
+  .signup-container {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  .input-field {
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
