@@ -113,6 +113,7 @@ This system separates **workflow design (blueprint)** from **workflow execution 
 5. User context attached to request:
    ```js
    req.user = { userId, orgId, role }
+   ```
 
 
 ##  System Architecture
@@ -155,7 +156,6 @@ src/
  ├─ middlewares/
  ├─ config/
  └─ app.js
-
 ```
 
 ##  Frontend Folder Structure
@@ -174,7 +174,6 @@ src/
 DATABASE_URL=
 JWT_SECRET=
 PORT=
-
 ```
 
 
