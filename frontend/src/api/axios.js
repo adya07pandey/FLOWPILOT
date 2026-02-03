@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_BASE_PATH,
+  baseURL: "https://flowpilot-3if5.onrender.com",
   withCredentials: true,
 });
 
