@@ -56,7 +56,7 @@ This system separates **workflow design (blueprint)** from **workflow execution 
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
 
 > Below are some key screenshots demonstrating major features of the platform.
 
@@ -113,3 +113,31 @@ This system separates **workflow design (blueprint)** from **workflow execution 
 5. User context attached to request:
    ```js
    req.user = { userId, orgId, role }
+
+##  System Architecture
+
+```text
+Frontend (React)
+       ↓
+REST API (Express)
+       ↓
+Business Services
+       ↓
+Prisma ORM
+       ↓
+PostgreSQL
+
+##  Workflow Lifecycle
+Design Workflow → Save
+        ↓
+Publish Workflow
+        ↓
+Start Workflow
+        ↓
+Create Root Tasks
+        ↓
+Complete Task
+        ↓
+Unlock Next Node
+        ↓
+If Approval → Wait for Decision
