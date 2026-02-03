@@ -60,27 +60,27 @@ This system separates **workflow design (blueprint)** from **workflow execution 
 
 > Below are some key screenshots demonstrating major features of the platform.
 
-### 🔐 Authentication (Signup / Login)
-![Login](screenshots/login.png)
-![Signup](screenshots/signup.png)
+###  Home
+![Home](Images/home.png)
 
-### 🧭 Dashboard
-![Dashboard](screenshots/dashboard.png)
+###  Authentication (Signup / Login)
+![Signup](Images/signup.png)
+![Login](Images/login.png)
 
-### 🧩 Workflow Builder
-![Workflow Builder](screenshots/workflow-builder.png)
+###  Dashboard
+![Dashboard](Images/dashboard.png)
 
-### 📋 Workflows List
-![Workflows](screenshots/workflows.png)
+###  Workflow Builder
+![Workflow Builder](Images/createworkflow.png)
 
-### ✅ Tasks Page
-![Tasks](screenshots/tasks.png)
+###  Workflows List
+![Workflows](Images/workflows.png)
 
-### ✋ Approval Screen
-![Approvals](screenshots/approvals.png)
+###  Tasks Page
+![Tasks](Images/tasks.png)
 
-### 📊 Analytics Dashboard
-![Analytics](screenshots/analytics.png)
+###  Approval Screen
+![Approvals](Images/approvals.png)
 
 ---
 
