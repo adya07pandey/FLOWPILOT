@@ -25,7 +25,7 @@ export default function ApprovalNodeRightPanel({ logic, onChange, onDelete }) {
     if (!Array.isArray(orgUsers)) return;
     const user = orgUsers.find(
       (u) => u.name.trim().toLowerCase() === name.trim().toLowerCase()
-      
+
     );
 
     if (!user) {
@@ -84,19 +84,20 @@ export default function ApprovalNodeRightPanel({ logic, onChange, onDelete }) {
           onChange({
             ...logic,
             approverName: value,
-            approver:null,            
+            approver: null,
           })
         }}
-        onBlur={(e)=>validateApprover(e.target.value)}
+        onBlur={(e) => validateApprover(e.target.value)}
         placeholder="Approver"
       />
 
-      {assigneeError && (
+      {approverError && (
         <div className="field-warning">
           <span className="warning-icon">⚠</span>
-          <span className="warning-text">{assigneeError}</span>
+          <span className="warning-text">{approverError}</span>
         </div>
       )}
+
 
       <button className="deletenodebtn" onClick={onDelete}> Delete Node</button>
 
