@@ -27,15 +27,16 @@ export const signup = async (req, res, next) => {
 export const login = async (req, res, next) => {
     try {
         const data = req.body;
-        
+
         const token = await authservice.login(data);
 
         res.cookie("jwt", token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
-            sameSite: "lax",
-            maxAge: 1000 * 60 * 60 * 24 * 7,
+            secure: true,
+            sameSite: "none",
+            maxAge: 1000 * 60 * 60 * 24 * 7
         });
+
 
         res.status(200).json({
             status: "Logged in successfully",
@@ -50,10 +51,13 @@ export const login = async (req, res, next) => {
 }
 
 export const logout = async (req, res) => {
-    res.cookie("jwt", "", {
+    res.cookie("jwt", token, {
         httpOnly: true,
-        expires: new Date(0)
-    })
+        secure: true,
+        sameSite: "none",
+        maxAge: 1000 * 60 * 60 * 24 * 7
+    });
+
     res.status(200).json({
         status: "Logged out successfully",
     });

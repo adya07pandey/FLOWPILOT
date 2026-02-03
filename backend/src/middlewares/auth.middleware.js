@@ -1,39 +1,36 @@
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 
-const auth = (req,res,next) => {
-    try{
+const auth = (req, res, next) => {
+  try {
+    let token = null;
 
-        const authheader = req.headers.authorization;
-
-        let token;
-        // check header and token
-        if(req.headers.authorization && req.headers.authorization.startsWith("Bearer ")){
-            token = req.headers.authorization.split(" ")[1]
-
-        }
-        else if(req.cookies?.jwt){
-            token = req.cookies.jwt;
-        }
-
-        if(!token){
-            throw new Error("Authorization header missing")
-        }
-
-        //verify token
-        const payload = jwt.verify(token,process.env.JWT_SECRET)
-        
-        //user credentials
-        req.user={
-            userId:payload.userId,
-            orgId:payload.orgId,
-            role:payload.role,
-        };
-        
-        next();
+    if (req.cookies?.jwt) {
+      token = req.cookies.jwt;
     }
-    catch(err){
-        next(err);
+
+    else if (
+      req.headers.authorization &&
+      req.headers.authorization.startsWith("Bearer ")
+    ) {
+      token = req.headers.authorization.split(" ")[1];
     }
-}
+
+    if (!token) {
+      return res.status(401).json({ message: "Not authenticated" });
+    }
+
+    const payload = jwt.verify(token, process.env.JWT_SECRET);
+
+    req.user = {
+      userId: payload.userId,
+      orgId: payload.orgId,
+      role: payload.role
+    };
+
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid or expired token" });
+  }
+};
 
 export default auth;
