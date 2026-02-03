@@ -114,6 +114,7 @@ This system separates **workflow design (blueprint)** from **workflow execution 
    ```js
    req.user = { userId, orgId, role }
 
+
 ##  System Architecture
 
 ```text
@@ -126,5 +127,64 @@ Business Services
 Prisma ORM
        ↓
 PostgreSQL
+```
+
+##  Workflow Lifecycle
+
+```text
+Design Workflow → Save
+      ↓
+Publish Workflow
+      ↓
+Start Workflow
+      ↓
+Create Root Tasks
+      ↓
+Complete Task
+      ↓
+Unlock Next Node
+      ↓
+If Approval → Wait for Decision
+```
+
+##  Backend Folder Structure
+
+```text
+src/
+ ├─ modules/
+ ├─ middlewares/
+ ├─ config/
+ └─ app.js
+
+```
+
+##  Frontend Folder Structure
+```text
+src/
+ ├─ api/
+ ├─ pages/
+ ├─ components/
+ ├─ context/
+ ├─ styles/
+ └─ App.jsx
+```
+
+##  Environment Variables
+```text
+DATABASE_URL=
+JWT_SECRET=
+PORT=
+
+```
+
+
+
+
+
+
+
+
+
+
 
 
