@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { getMe } from "../api/auth";
 import "../styles/dashboard.css"
 import { useNavigate } from "react-router-dom"
-import { getOrgName, inviteUsers } from "../api/orgusers";
-import InviteUser from "../component/InviteUser";
-import { useAuth } from "../context/AuthContext";
-import { dashboardStats } from "../api/dashboard";
-import { WorkflowPieChart } from "../component/WorkflowPieChart";
+import { getOrgName, inviteUsers } from "../api/orgusers.js";
+import InviteUser from "../component/InviteUser.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
+import { dashboardStats } from "../api/dashboard.js";
+import { WorkflowPieChart } from "../component/WorkflowPieChart.jsx";
 
 
 export default function Dashboard() {

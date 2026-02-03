@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { acceptApproval, getTasks, rejectApproval } from "../api/workflow.api";
+import { acceptApproval, getTasks, rejectApproval } from "../api/workflow.api.js";
 import { useEffect, useState } from "react";
 import "../styles/approvals.css"
-import { completeApproval, getApprovals } from "../api/task.api";
+import { completeApproval, getApprovals } from "../api/task.api.js";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import InviteUser from "../component/InviteUser";
-import { useAuth } from "../context/AuthContext";
+import InviteUser from "../component/InviteUser.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
 
 export default function ApprovalsPage() {
   const navigate = useNavigate();

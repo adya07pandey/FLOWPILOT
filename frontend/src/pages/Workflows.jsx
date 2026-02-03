@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import ReactFlow, { addEdge, Position } from "reactflow";
 import "reactflow/dist/style.css"
 import { v4 as uuid } from "uuid";
 import "../styles/workflow.css"
 import { useNavigate } from "react-router-dom";
-import { getWorkflows, startWorkflow } from "../api/workflow.api";
-import { useAuth } from "../context/AuthContext";
+import { getWorkflows, startWorkflow } from "../api/workflow.api.js";
+import { useAuth } from "../context/AuthContext.jsx";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import InviteUser from "../component/InviteUser";
+import InviteUser from "../component/InviteUser.jsx";
 
 export default function WorkflowPage() {
   const navigate = useNavigate();

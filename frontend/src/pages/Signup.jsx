@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "../styles/login.css"
 import { useNavigate } from "react-router-dom";
-import { signup } from "../api/auth"
-import { useAuth } from "../context/AuthContext";
+import { signup } from "../api/auth.js"
+import { useAuth } from "../context/AuthContext.jsx";
 
 export default function Signup() {
     const navigate = useNavigate();

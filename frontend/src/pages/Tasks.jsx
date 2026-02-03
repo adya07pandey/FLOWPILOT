@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { getTasks } from "../api/workflow.api";
+import { getTasks } from "../api/workflow.api.js";
 import { useEffect, useState } from "react";
 import "../styles/tasks.css"
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { useAuth } from "../context/AuthContext";
-import InviteUser from "../component/InviteUser";
-import { completeTask } from "../api/task.api";
+import { useAuth } from "../context/AuthContext.jsx";
+import InviteUser from "../component/InviteUser.jsx";
+import { completeTask } from "../api/task.api.js";
 
 export default function TasksPage() {
   const navigate = useNavigate();

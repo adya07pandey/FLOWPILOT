@@ -5,15 +5,15 @@ import { FaChevronDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"
 import { v4 as uuid } from "uuid";
 import { ReactFlow, Background, Controls, useEdgesState, useNodesState, addEdge, Position } from "reactflow";
-import ApprovalNode from "../component/ApprovalNode";
-import TaskNode from "../component/TaskNode";
+import ApprovalNode from "../component/ApprovalNode.jsx";
+import TaskNode from "../component/TaskNode.jsx";
 import { useCallback, useState, useEffect } from "react";
-import NodeConfigPanel from "../component/NodeConfigPanel";
-import { createWorkflow } from "../api/workflow.api";
+import NodeConfigPanel from "../component/NodeConfigPanel.jsx";
+import { createWorkflow } from "../api/workflow.api.js";
 import { useParams, useLocation } from "react-router-dom";
-import { getWorkflowById } from "../api/workflow.api";
-import { useAuth } from "../context/AuthContext";
-import InviteUser from "../component/InviteUser";
+import { getWorkflowById } from "../api/workflow.api.js";
+import { useAuth } from "../context/AuthContext.jsx";
+import InviteUser from "../component/InviteUser.jsx";
 
 const nodeTypes = {
   task: TaskNode,
