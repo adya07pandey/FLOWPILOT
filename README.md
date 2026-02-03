@@ -6,37 +6,37 @@ This system separates **workflow design (blueprint)** from **workflow execution 
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🔐 Authentication & Authorization
+###  Authentication & Authorization
 - User Signup & Login
 - JWT-based authentication
 - Token stored in HTTP-only cookies and Authorization headers
 - Role-Based Access Control (ADMIN, MANAGER, EMPLOYEE)
 
-### 🏢 Multi-Tenant Organization System
+###  Multi-Tenant Organization System
 - Each user belongs to an organization
 - Data isolated per organization
 - Admin can invite users and assign roles
 
-### 🧩 Workflow Builder
+###  Workflow Builder
 - Visual drag-and-drop workflow editor
 - Task and Approval nodes
 - Directed Acyclic Graph (DAG) validation
 - Save Draft & Publish workflows
 
-### ⚙ Workflow Execution Engine
+###  Workflow Execution Engine
 - Start workflows manually
 - Root nodes generate initial tasks
 - Completing a task unlocks next nodes
 - Deterministic execution
 
-### ✋ Approval Engine
+###  Approval Engine
 - Approval nodes create BLOCKED tasks
 - Managers/Admins approve or reject
 - Approved tasks unlock next steps
 
-### 📋 Task Management
+###  Task Management
 - Task states:
   - PENDING
   - IN_PROGRESS
@@ -44,7 +44,7 @@ This system separates **workflow design (blueprint)** from **workflow execution 
   - BLOCKED
 - Start / Complete / Block tasks
 
-### 📊 Dashboard & Analytics
+###  Dashboard & Analytics
 - KPI cards
 - Task status distribution
 - Workflow performance
@@ -54,7 +54,7 @@ This system separates **workflow design (blueprint)** from **workflow execution 
 
 ---
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - React
@@ -72,7 +72,7 @@ This system separates **workflow design (blueprint)** from **workflow execution 
 
 ---
 
-## 🔐 Authentication Flow
+##  Authentication Flow
 
 1. User logs in
 2. Backend generates JWT
