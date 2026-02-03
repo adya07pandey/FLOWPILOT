@@ -91,8 +91,12 @@ export default function ApprovalNodeRightPanel({ logic, onChange, onDelete }) {
         placeholder="Approver"
       />
 
-      {approverError && ( <p style={{color:"Red"}}>{approverError}</p>)}
-      
+      {assigneeError && (
+        <div className="field-warning">
+          <span className="warning-icon">⚠</span>
+          <span className="warning-text">{assigneeError}</span>
+        </div>
+      )}
 
       <button className="deletenodebtn" onClick={onDelete}> Delete Node</button>
 
