@@ -54,6 +54,36 @@ This system separates **workflow design (blueprint)** from **workflow execution 
 
 ---
 
+---
+
+## 🖼️ Screenshots
+
+> Below are some key screenshots demonstrating major features of the platform.
+
+### 🔐 Authentication (Signup / Login)
+![Login](screenshots/login.png)
+![Signup](screenshots/signup.png)
+
+### 🧭 Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### 🧩 Workflow Builder
+![Workflow Builder](screenshots/workflow-builder.png)
+
+### 📋 Workflows List
+![Workflows](screenshots/workflows.png)
+
+### ✅ Tasks Page
+![Tasks](screenshots/tasks.png)
+
+### ✋ Approval Screen
+![Approvals](screenshots/approvals.png)
+
+### 📊 Analytics Dashboard
+![Analytics](screenshots/analytics.png)
+
+---
+
 ##  Tech Stack
 
 ### Frontend
