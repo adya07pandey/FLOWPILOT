@@ -127,17 +127,4 @@ Prisma ORM
        ↓
 PostgreSQL
 
-##  Workflow Lifecycle
-Design Workflow → Save
-        ↓
-Publish Workflow
-        ↓
-Start Workflow
-        ↓
-Create Root Tasks
-        ↓
-Complete Task
-        ↓
-Unlock Next Node
-        ↓
-If Approval → Wait for Decision
+
